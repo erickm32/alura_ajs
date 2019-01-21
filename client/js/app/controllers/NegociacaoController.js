@@ -13,12 +13,11 @@ class NegociacaoController {
         );
 
 
-        this._mensagemView =
-            this._mensagem = new Bind(
-                new Mensagem(),
-                new MensagemView(this.$('#mensagemView')),
-                'texto',
-            );
+        this._mensagem = new Bind(
+            new Mensagem(),
+            new MensagemView(this.$('#mensagemView')),
+            'texto',
+        );
     }
 
     adiciona(event) {
