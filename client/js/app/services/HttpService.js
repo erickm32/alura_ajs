@@ -8,7 +8,7 @@ class HttpService {
     get(url) {
         return fetch(url)
             .then(res => this._handleErrors(res))
-            .then(res => res.json)
+            .then(res => res.json())
     }
 
     post(url, dado) {
