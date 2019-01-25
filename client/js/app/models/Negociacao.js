@@ -6,6 +6,12 @@ class Negociacao {
         Object.freeze(this);
     }
 
+    equals(outraNegociacao) {
+        return this._data.getTime() == outraNegociacao.data.getTime()
+            && this._quantidade == outraNegociacao.quantidade
+            && this._valor == outraNegociacao.valor;
+    }
+
     get data() {
         return new Date(this._data.getTime());
     }
