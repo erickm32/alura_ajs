@@ -3,6 +3,7 @@ var ConnectionFactory = (function () {
     const version = 4;
     const dbName = 'aluraframe';
 
+    var connection = null;
     var close = null;
 
     return class ConnectionFactory {
