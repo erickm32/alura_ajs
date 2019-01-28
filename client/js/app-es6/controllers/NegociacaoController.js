@@ -1,4 +1,13 @@
-class NegociacaoController {
+import {Bind} from '../helpers/Bind';
+import {DateHelper} from '../helpers/DateHelper';
+import {ListaNegociacoes} from '../models/ListaNegociacoes';
+import {Mensagem} from '../models/Mensagem';
+import {MensagemView} from '../views/MensagemView';
+import {Negociacao} from '../models/Negociacao'
+import {NegociacoesView} from '../views/NegociacoesView';
+import {NegociacaoService} from '../services/NegociacaoService';
+
+export class NegociacaoController {
     constructor() {
         this.$ = document.querySelector.bind(document);
 
@@ -53,7 +62,7 @@ class NegociacaoController {
     }
 
     apaga() {
-        new NegociacaoService()
+        this._service
             .apaga()
             .then(mensagem => {
                 this._mensagem.texto = mensagem;

@@ -1,4 +1,7 @@
-class NegociacoesView extends View {
+import {View} from './View';
+import {DateHelper} from '../helpers/DateHelper';
+
+export class NegociacoesView extends View {
     template(modelo) {
         return `
             <table class="table table-hover table-bordered">
