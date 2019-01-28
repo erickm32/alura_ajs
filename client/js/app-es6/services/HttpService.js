@@ -17,6 +17,6 @@ export class HttpService {
             method: 'POST',
             body: JSON.stringify(dado)
         })
-        .then(res => _handleErrors(res));
+        .then(res => this._handleErrors(res));
     }
 }

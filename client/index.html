@@ -36,7 +36,7 @@
     </form>
 
     <div class="text-center">
-        <button class="btn btn-primary text-center" type="button">
+        <button class="btn btn-primary text-center" id="btn-apaga" type="button">
             Apagar
         </button>
     </div>
@@ -48,7 +48,7 @@
     <script>
         System.defaultJSExtensions = true;
         System.import('js/app/boot').catch(function (err) {
-            console.error(err);
+            console.error(err.message);
         });
     </script>
 </body>

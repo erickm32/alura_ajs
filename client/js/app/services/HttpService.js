@@ -58,12 +58,14 @@ System.register([], function (_export, _context) {
                 }, {
                     key: 'post',
                     value: function post(url, dado) {
+                        var _this2 = this;
+
                         return fetch(url, {
                             headers: { 'Content-type': 'application/json' },
                             method: 'POST',
                             body: JSON.stringify(dado)
                         }).then(function (res) {
-                            return _handleErrors(res);
+                            return _this2._handleErrors(res);
                         });
                     }
                 }]);

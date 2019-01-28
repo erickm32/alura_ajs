@@ -1,8 +1,8 @@
-import {currentInstance} from './controllers/NegociacaoController';
+import { currentInstance } from './controllers/NegociacaoController';
 
 let negociacaoController = currentInstance();
 
-document.querySelector('.form').onsubmit = 
+document.querySelector('.form').onsubmit =
     negociacaoController.adiciona.bind(negociacaoController);
-document.querySelector('[type=button]').onclick = 
+document.querySelector('#btn-apaga').onclick =
     negociacaoController.apaga.bind(negociacaoController);

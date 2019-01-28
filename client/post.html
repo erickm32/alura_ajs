@@ -25,39 +25,15 @@
             <input id="valor" type="number" class="form-control" min="0.01" step="0.01" value="0.0" required />
         </div>
 
-        <button class="btn btn-primary" type="submit" onclick="sendPost(event)">Enviar dados para servidor</button>
+        <button id="btn-envia" class="btn btn-primary" type="submit">Enviar dados para servidor</button>
     </form>
 
-    <script src="js/app/services/HttpService.js"></script>
+    <script src="node_modules/systemjs/dist/system.js"></script>
     <script>
-        function sendPost(event) {
-
-            event.preventDefault();
-
-            console.log("Enviando post");
-
-            let $ = document.querySelector.bind(document);
-            inputData = $('#data');
-            inputQuantidade = $('#quantidade');
-            inputValor = $('#valor');
-
-            let negociacao = {
-                data: inputData.value,
-                quantidade: inputQuantidade.value,
-                valor: inputValor.value
-            };
-
-            new HttpService()
-                .post('/negociacoes', negociacao)
-                .then(() => {
-                    inputData.value = '';
-                    inputQuantidade.value = 1;
-                    inputValor.value = 0.0;
-                    inputData.focus();
-                    alert('Negociação enviada com sucesso');
-                })
-                .catch(erro => alert(`Não foi possível enviar a negociação: ${erro}`));
-        }
+        System.defaultJSExtensions = true;
+        System.import('js/app/boot_post').catch(function (err) {
+            console.error(err.message);
+        });
     </script>
 </body>
 

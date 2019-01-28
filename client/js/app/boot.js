@@ -13,7 +13,7 @@ System.register(['./controllers/NegociacaoController'], function (_export, _cont
 
 
             document.querySelector('.form').onsubmit = negociacaoController.adiciona.bind(negociacaoController);
-            document.querySelector('[type=button]').onclick = negociacaoController.apaga.bind(negociacaoController);
+            document.querySelector('#btn-apaga').onclick = negociacaoController.apaga.bind(negociacaoController);
         }
     };
 });
