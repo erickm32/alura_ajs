@@ -7,7 +7,7 @@ import {Negociacao} from '../models/Negociacao'
 import {NegociacoesView} from '../views/NegociacoesView';
 import {NegociacaoService} from '../services/NegociacaoService';
 
-export class NegociacaoController {
+class NegociacaoController {
     constructor() {
         this.$ = document.querySelector.bind(document);
 
@@ -105,4 +105,9 @@ export class NegociacaoController {
 
         this._inputData.focus();
     }
+}
+
+let negociacaoController = new NegociacaoController();
+export function currentInstance() {
+    return negociacaoController;
 }

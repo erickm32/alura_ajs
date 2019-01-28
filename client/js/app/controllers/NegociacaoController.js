@@ -3,7 +3,7 @@
 System.register(['../helpers/Bind', '../helpers/DateHelper', '../models/ListaNegociacoes', '../models/Mensagem', '../views/MensagemView', '../models/Negociacao', '../views/NegociacoesView', '../services/NegociacaoService'], function (_export, _context) {
     "use strict";
 
-    var Bind, DateHelper, ListaNegociacoes, Mensagem, MensagemView, Negociacao, NegociacoesView, NegociacaoService, _createClass, NegociacaoController;
+    var Bind, DateHelper, ListaNegociacoes, Mensagem, MensagemView, Negociacao, NegociacoesView, NegociacaoService, _createClass, NegociacaoController, negociacaoController;
 
     function _classCallCheck(instance, Constructor) {
         if (!(instance instanceof Constructor)) {
@@ -48,7 +48,7 @@ System.register(['../helpers/Bind', '../helpers/DateHelper', '../models/ListaNeg
                 };
             }();
 
-            _export('NegociacaoController', NegociacaoController = function () {
+            NegociacaoController = function () {
                 function NegociacaoController() {
                     _classCallCheck(this, NegociacaoController);
 
@@ -158,9 +158,14 @@ System.register(['../helpers/Bind', '../helpers/DateHelper', '../models/ListaNeg
                 }]);
 
                 return NegociacaoController;
-            }());
+            }();
 
-            _export('NegociacaoController', NegociacaoController);
+            negociacaoController = new NegociacaoController();
+            function currentInstance() {
+                return negociacaoController;
+            }
+
+            _export('currentInstance', currentInstance);
         }
     };
 });
